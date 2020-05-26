@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="row">
+        <div style="width:25rem; text-align:center; border:solid; border-width:1px; margin-top: 10px;">
+            <h4> Random number generator </h4>
+            <h2 id="randomNumber_byTime"> 0 </h2>
+        </div>
+
+        <div style="width:25rem; text-align:center; border:solid; border-width:1px; margin-top: 10px;">
+            <h4> Get Random Value by Click </h4>
+            <button onclick="getRandValue()"> Click Me </button>
+            <h2 id="randomNumber_byClick"> 0 </h2>
+        </div>
+    </div>
+
+@section scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script src="~/Scripts/SignalR-helper.js"></script>
+}
