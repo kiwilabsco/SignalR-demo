@@ -8,6 +8,7 @@ var minValue = 0, maxValue = 100;
 
             // Let's trigger the Hub's function which locates in SignalRHub.cs file.
             $.connection.signalRHub.server.generateRandomNumbers(minValue, maxValue);
+            $.connection.signalRHub.server.prepareDataForChart(minValue, maxValue);
         })
         .fail(function () {
             console.log("fail");
@@ -20,6 +21,10 @@ $.connection.signalRHub.client.updateRandomValue = function (randomValue) {
 
 $.connection.signalRHub.client.sendRandValue = function (randomValue) {
     document.getElementById("randomNumber_byClick").innerHTML = randomValue;
+}
+
+$.connection.signalRHub.client.getChartData = function (dataArray) {
+    google.charts.setOnLoadCallback(drawChart(dataArray));
 }
 
 
