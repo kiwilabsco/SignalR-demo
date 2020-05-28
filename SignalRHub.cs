@@ -13,6 +13,7 @@ namespace SignalR_Application
 	{
 		int sleepingTime = 3000; // Sleeping time as miliseconds
 
+		// Async Function for generating numbers in sleepingTime period
 		public async System.Threading.Tasks.Task GenerateRandomNumbers(int minValue, int maxValue){
 			await Task.Run(() => 
 			{
@@ -28,6 +29,7 @@ namespace SignalR_Application
 			});
 		}
 
+		// Async Function for generating numbers and updating the chart in sleepingTimePeriod
 		public async System.Threading.Tasks.Task prepareDataForChart(int minValue, int maxValue){
 			await Task.Run(() => 
 			{
